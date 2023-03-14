@@ -1,0 +1,15 @@
+form{
+    width: 400px;
+}
+.container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* height: 100vh; */
+}
+#sign{
+    display: flex;
+    justify-content: space-between;
+  
+}

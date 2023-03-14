@@ -1,0 +1,36 @@
+<div class="container ">
+    <form class="border  p-4" [formGroup]="Login">
+        <div class="row ">
+            <div class="col text-center p-2 mb-3 bg-success">
+                <span class="fs-3">Sign In Here</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="email" class="form-label">Email </label>
+                <input type="email" name="email" formControlName="email" class="form-control" id="email">
+                <div *ngIf="!Login.controls['email'].valid && Login.controls['email'].touched">
+                    <span style="color:rgb(208, 45, 45) ;">Please enter your email</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="password" class="form-label"> Password</label>
+                <input type="password" name="pwd" formControlName="pwd" class="form-control" id="password">
+                <div *ngIf="!Login.controls['pwd'].valid && Login.controls['pwd'].touched">
+                    <span style="color:rgb(208, 45, 45) ;">Please enter your password</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-2">
+            <button type="button" class="btn btn-primary me-md-3 " (click)="loginOutput()">Sign In</button>
+
+        </div>
+
+        <div class="col" id="sign">
+            <a [routerLink]="['/logout']">Forgot Password</a>
+            <a [routerLink]="['/register']">Sign-Up</a>
+        </div>
+    </form>
+</div>

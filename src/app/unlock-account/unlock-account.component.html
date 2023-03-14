@@ -1,0 +1,47 @@
+<div class="container ">
+    <form  class="border  p-4" [formGroup]="Unlock">
+        <div class="row ">
+            <div class="col text-center p-2 mb-3 bg-success">
+                <span class="fs-3">Unlock Account</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="email" class="form-label">Email </label>
+                <input type="email" name="email" formControlName="email" class="form-control" id="email">
+                <div *ngIf="!Unlock.controls['email'].valid && Unlock.controls['email'].touched">
+                    <span style="color:rgb(208, 45, 45) ;">Please enter your email</span>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for="temppass" class="form-label">Temporary Password</label>
+                <input type="password" name="tempPwd" formControlName="tempPwd" class="form-control" id="temppass">
+                <div *ngIf="!Unlock.controls['tempPwd'].valid && Unlock.controls['tempPwd'].touched">
+                    <span style="color:rgb(208, 45, 45) ;">Enter temporary password</span>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col mb-3">
+                <label for="newPass" class="form-label">New Password</label>
+                <input type="password" class="form-control"   formControlName="newPwd" name="newPwd" id="newPass">
+                <div *ngIf="!Unlock.controls['newPwd'].valid && Unlock.controls['newPwd'].touched">
+                    <span style="color:rgb(208, 45, 45) ;">Please enter password*</span>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for="conPass" class="form-label">Confirm New Password</label>
+                <input type="password" class="form-control" formControlName="confirmPwd" name="confirmPwd" id="conPass">
+                <div *ngIf="!Unlock.controls['confirmPwd'].valid && Unlock.controls['confirmPwd'].touched">
+                    <span style="color:rgb(208, 45, 45) ;"> confirm your password*</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-2">
+            <button type="button" class="btn btn-primary me-md-3 " (click)="unlockOut()"
+            >Unlock</button>
+         
+        </div>
+        </form>
+    </div>
+    
